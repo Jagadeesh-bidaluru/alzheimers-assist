@@ -10,6 +10,7 @@ export interface Patient {
   severity: SeverityLevel;
   status: TreatmentStatus;
   daysSinceDiagnosis: number;
+  location: string;
   nextAction?: string;
   scheduledDate?: Date;
   notes?: string;

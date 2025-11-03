@@ -34,6 +34,7 @@ export const AddPatientDialog = ({
     name: "",
     diagnosisDate: "",
     severity: "moderate" as SeverityLevel,
+    location: "Boston, MA",
     notes: "",
   });
 
@@ -64,6 +65,7 @@ export const AddPatientDialog = ({
       urgency,
       status: "diagnosed",
       daysSinceDiagnosis,
+      location: formData.location,
       nextAction: "Schedule initial consultation",
       notes: formData.notes || undefined,
     };
@@ -74,6 +76,7 @@ export const AddPatientDialog = ({
       name: "",
       diagnosisDate: "",
       severity: "moderate",
+      location: "Boston, MA",
       notes: "",
     });
     onOpenChange(false);
@@ -126,6 +129,30 @@ export const AddPatientDialog = ({
                 <SelectItem value="mild">Mild</SelectItem>
                 <SelectItem value="moderate">Moderate</SelectItem>
                 <SelectItem value="severe">Severe</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
+
+          <div>
+            <Label htmlFor="location">Office Location</Label>
+            <Select
+              value={formData.location}
+              onValueChange={(value: string) =>
+                setFormData({ ...formData, location: value })
+              }
+            >
+              <SelectTrigger>
+                <SelectValue />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="Boston, MA">Boston, MA</SelectItem>
+                <SelectItem value="New York, NY">New York, NY</SelectItem>
+                <SelectItem value="Chicago, IL">Chicago, IL</SelectItem>
+                <SelectItem value="Los Angeles, CA">Los Angeles, CA</SelectItem>
+                <SelectItem value="Houston, TX">Houston, TX</SelectItem>
+                <SelectItem value="Phoenix, AZ">Phoenix, AZ</SelectItem>
+                <SelectItem value="Philadelphia, PA">Philadelphia, PA</SelectItem>
+                <SelectItem value="San Antonio, TX">San Antonio, TX</SelectItem>
               </SelectContent>
             </Select>
           </div>

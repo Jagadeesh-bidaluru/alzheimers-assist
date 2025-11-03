@@ -81,6 +81,12 @@ export const PatientCard = ({ patient, onClick }: PatientCardProps) => {
           </span>
         </div>
 
+        <div className="flex items-center text-sm text-muted-foreground">
+          <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-secondary text-secondary-foreground font-medium">
+            📍 {patient.location}
+          </span>
+        </div>
+
         {patient.nextAction && (
           <div className="flex items-start text-sm mt-3 pt-3 border-t border-border">
             <AlertCircle className="w-4 h-4 mr-2 text-primary mt-0.5" />
